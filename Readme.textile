@@ -1,0 +1,9 @@
+h1. ブログアプリのデモ
+
+
+テーブル作成
+<pre>
+cake schema create
+</pre>
+
+ブラウザで、path_app/install/runを叩くとテストデータ入ります。
