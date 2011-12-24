@@ -283,7 +283,7 @@ class PostsControllerTestCase extends CakeTestCase {
  * @return void
  */
 	public function admin_add() {
-		$this->Controller->Session->write('Auth.User',array('id'=>1,'role'=>'admin'));
+		$this->Controller->Session->write('Auth.User',array('id'=>1,'name'=>'adminuser'));
 		$this->Controller->request->addParams(Router::parse('/admin/posts/add'));
 		Router::setRequestInfo($this->Controller->request);
 		$this->Controller->startupProcess();
@@ -308,7 +308,7 @@ class PostsControllerTestCase extends CakeTestCase {
  * @return void
  */
 	public function admin_add_新規保存() {
-		$this->Controller->Session->write('Auth.User',array('id'=>1,'role'=>'admin'));
+		$this->Controller->Session->write('Auth.User',array('id'=>1,'name'=>'adminuser'));
 		$this->Controller->request->addParams(Router::parse('/admin/posts/add'));
 		Router::setRequestInfo($this->Controller->request);
 		$this->Controller->startupProcess();
@@ -384,7 +384,7 @@ class PostsControllerTestCase extends CakeTestCase {
  * @return void
  */
 	public function admin_edit() {
-		$this->Controller->Session->write('Auth.User',array('id'=>1,'role'=>'admin'));
+		$this->Controller->Session->write('Auth.User',array('id'=>1,'name'=>'adminuser'));
 		$this->Controller->request->addParams(Router::parse('/admin/posts/edit/1'));
 		Router::setRequestInfo($this->Controller->request);
 		$this->Controller->startupProcess();
