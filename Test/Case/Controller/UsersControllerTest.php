@@ -75,6 +75,7 @@ class UsersControllerTestCase extends CakeTestCase {
  * @return void
  */
 	public function tearDown() {
+		$this->Controller->Session->destroy();
 		unset($this->Controller);
 		unset($this->Users);
 
@@ -100,12 +101,7 @@ class UsersControllerTestCase extends CakeTestCase {
 		$this->assertRegExp("/data\[User\]\[email\]/", $renderer);
 		$this->assertRegExp("/data\[User\]\[password\]/", $renderer);
 		$this->assertRegExp("/data\[User\]\[name\]/", $renderer);
-		$this->assertRegExp("/data\[User\]\[role\]/", $renderer);
-		$this->assertRegExp("/value=\"admin\"/", $renderer);
-		$this->assertRegExp("/value=\"editor\"/", $renderer);
-
 		$this->assertRegExp("/data\[User\]\[is_active\]/", $renderer);
-		$this->assertRegExp("/data\[User\]\[email\]/", $renderer);
 
 	}
 /**
@@ -113,13 +109,38 @@ class UsersControllerTestCase extends CakeTestCase {
  * @method add
  * @return void
  */
-	public function ログイン時() {
-		$this->Controller->Session->write('Auth.User',array('id'=>1,'role'=>'admin'));
-		$this->Controller->request->addParams(Router::parse('/admin/users/add'));
+	public function is_activeでないとログインできない() {
+		$this->Controller->request->addParams(Router::parse('/admin/users/login'));
 		Router::setRequestInfo($this->Controller->request);
 		$this->Controller->startupProcess();
-		$this->assertEqual(null,$this->Controller->redirectUrl);
+		$_SERVER['REQUEST_METHOD'] = 'POST';
+		$this->Controller->request->data = array(
+			'User'=>array(
+				'email'=>'test2@test.com',
+				'password'=>'test'
+			)
+		);
+		$this->Controller->admin_login();
+		$this->assertEqual('Username or password is incorrect',CakeSession::read('Message.flash.message'));
 	}
-
+/**
+ * @test
+ * @method add
+ * @return void
+ */
+	public function ログイン() {
+		$this->Controller->request->addParams(Router::parse('/admin/users/login'));
+		Router::setRequestInfo($this->Controller->request);
+		$this->Controller->startupProcess();
+		$_SERVER['REQUEST_METHOD'] = 'POST';
+		$this->Controller->request->data = array(
+			'User'=>array(
+				'email'=>'test@test.com',
+				'password'=>'test'
+			)
+		);
+		$this->Controller->admin_login();
+		$this->assertEqual('/',$this->Controller->redirectUrl);
+	}
 
 }

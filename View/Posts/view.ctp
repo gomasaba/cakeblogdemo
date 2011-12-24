@@ -21,11 +21,6 @@
 			<?php echo h($post['Post']['body']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Is Publish'); ?></dt>
-		<dd>
-			<?php echo h($post['Post']['is_publish']); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('Created'); ?></dt>
 		<dd>
 			<?php echo $this->Time->format('Y-m-d',$post['Post']['created']); ?>

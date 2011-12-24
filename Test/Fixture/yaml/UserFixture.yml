@@ -3,14 +3,10 @@
     email: test@test.com
     password: test
     name: 管理者
-    role: admin
     is_active: 1
-
 -
-    # id: 2
+    # id: 1
     email: test2@test.com
-    password: test2
-    name: 更新者
-    role: editor
-    is_active: 1
-
+    password: test
+    name: 非アクティブなユーザー
+    is_active: 0

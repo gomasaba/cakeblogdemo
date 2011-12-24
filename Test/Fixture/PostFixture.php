@@ -18,7 +18,7 @@ class PostFixture extends MyFixture {
 			}else{
 				$this->records[$key]['created'] = strtotime('-1 day');
 			}
-		}		
+		}
 	}
 
 }

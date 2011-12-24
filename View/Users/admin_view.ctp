@@ -21,11 +21,6 @@
 			<?php echo h($user['User']['name']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Role'); ?></dt>
-		<dd>
-			<?php echo h($user['User']['role']); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('Is Active'); ?></dt>
 		<dd>
 			<?php echo h($user['User']['is_active']); ?>

@@ -6,10 +6,6 @@
 		echo $this->Form->input('email');
 		echo $this->Form->input('password');
 		echo $this->Form->input('name');
-		echo $this->Form->input('role',array(
-								'type'=>'radio','legend'=>false,
-								'options'=>array('admin'=>'管理者','editor'=>'編集者')
-		));
 		echo $this->Form->input('is_active');
 	?>
 	</fieldset>

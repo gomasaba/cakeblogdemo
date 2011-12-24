@@ -5,8 +5,6 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
-		echo $this->Form->input('post_count');
-		echo $this->Form->input('Post');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

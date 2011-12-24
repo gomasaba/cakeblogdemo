@@ -38,10 +38,6 @@ class InstallController extends AppController {
 				$this->loadModel($modelClass);
 				$data = yaml_parse_file(APP.'Test/Fixture/yaml/'.$modelClass.'Fixture.yml');
 				foreach($data as $key=>$row){
-					if($modelClass==='User'){
-						$row['password'] = 'test';
-						$row['password'] = AuthComponent::password($row['password']);
-					}
 					if(array_key_exists('created',$row)){
 						unset($row['created']);
 					}

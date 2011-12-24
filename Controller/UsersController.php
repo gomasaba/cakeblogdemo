@@ -18,25 +18,34 @@ class UsersController extends AppController {
 				'fields' => array(
 							'username' => 'email',
 							'password' => 'password'
-				)
+				),
+				'scope' => array('User.is_active' => 1),
 			)
 		);
 	}
-
 /**
- * index method
- *
- * @return void
- */
+* admin_login method
+*
+* @return void
+*/
 	public function admin_login() {
-	 	if ($this->request->is('post')) {
-	        if ($this->Auth->login()) {
-	            return $this->redirect($this->Auth->redirect());
-    	    } else {
-	       	     $this->Session->setFlash(__('Username or password is incorrect'));
-       		}
-       	}
-    }
+		if ($this->request->is('post')) {
+			if ($this->Auth->login()) {
+				return $this->redirect($this->Auth->redirect());
+			} else {
+				$this->Session->setFlash(__('Username or password is incorrect'));
+			}
+		}
+	}
+/**
+* admin_logout method
+*
+* @return void
+*/
+	public function admin_logout() {
+		$this->Auth->logout();
+		return $this->redirect($this->Auth->redirect());
+	}
 /**
  * index method
  *

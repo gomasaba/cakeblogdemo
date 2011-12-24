@@ -45,8 +45,7 @@ echo $this->Form->create(false,array(
 							'dateFormat'=>'YMD',
 							'timeFormat'=>24,
 							'monthNames'=>false,
-							'minYear'=>date('Y'),
-							'maxYear'=>date('Y')+2
+							'maxYear'=>date('Y')
 						)).
 						$this->Form->input('time_to',array(
 							'label'=>false,'empty'=>true,
@@ -54,8 +53,7 @@ echo $this->Form->create(false,array(
 							'dateFormat'=>'YMD',
 							'timeFormat'=>24,
 							'monthNames'=>false,
-							'minYear'=>date('Y'),
-							'maxYear'=>date('Y')+2
+							'maxYear'=>date('Y')
 						)),
 						array('class'=>'clearfix')
 					),

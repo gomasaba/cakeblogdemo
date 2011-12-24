@@ -7,7 +7,6 @@
 		echo $this->Form->input('email');
 		echo $this->Form->input('password');
 		echo $this->Form->input('name');
-		echo $this->Form->input('role');
 		echo $this->Form->input('is_active');
 	?>
 	</fieldset>
