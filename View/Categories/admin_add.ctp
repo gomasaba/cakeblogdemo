@@ -4,7 +4,8 @@
 		<legend><?php echo __('Add Category'); ?></legend>
 	<?php
 		echo $this->Form->input('parent_id',array(
-				'options'=>$categories
+				'options'=>$categories,
+				'empty'=>true,
 		));
 		echo $this->Form->input('name');
 	?>

@@ -1,5 +1,7 @@
 <h2>ブログ管理画面</h2>
-
+<p style="text-align:right;">
+<?php echo $this->Html->link('ログアウト',array('controller'=>'users','action'=>'logout','admin'=>true));?>
+</p>
 <h3>ブログ記事</h3>
 <?php
 echo $this->Html->nestedList(array(
