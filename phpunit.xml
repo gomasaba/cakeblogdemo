@@ -8,7 +8,7 @@
         <server name="SCRIPT_NAME" value="/blog/index.php" />
     </php>
 	<logging>
-	<log type="coverage-html" target="./reports/coverage_html/" title="My Project" charset="UTF-8" yui="true" highlight="true" lowUpperBound="35" highLowerBound="70"/>
+	<log type="coverage-html" target="./reports/coverage_html/" title="CakeBlogDemo" charset="UTF-8" yui="true" highlight="true" lowUpperBound="35" highLowerBound="70"/>
 	<log type="coverage-clover" target="./reports/coverage.xml"/>
 	<log type="junit" target="./reports/unittest.xml" logIncompleteSkipped="false"/>
 	</logging>
