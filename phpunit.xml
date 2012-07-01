@@ -10,6 +10,7 @@
     <logging>
         <log type="coverage-html" target="./reports/coverage_html/" title="CakeBlogDemo" charset="UTF-8" yui="true" highlight="true" lowUpperBound="35" highLowerBound="70"/>
         <log type="coverage-source" target="./Test"/>
+        <log type="coverage-clover" target="./reports/coverage.xml"/>
         <log type="junit" target="./reports/unittest.xml" logIncompleteSkipped="false"/>
     </logging>
 </phpunit>
