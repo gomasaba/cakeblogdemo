@@ -124,7 +124,7 @@ class UsersControllerTestCase extends CakeTestCase {
 		$this->assertEqual('Username or password is incorrect',CakeSession::read('Message.flash.message'));
 	}
 /**
- * @test
+ * test
  * @method add
  * @return void
  */

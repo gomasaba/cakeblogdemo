@@ -114,7 +114,7 @@ class PostsControllerTestCase extends CakeTestCase {
 
 	}
 /**
- * @test
+ * test
  *
  * @return void
  */
